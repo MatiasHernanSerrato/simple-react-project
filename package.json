@@ -1,19 +1,16 @@
 {
   "name": "simple-react-project",
-  "version": "1.0.0",
-  "description": "just a mini project",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.0.17"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MatiasHernanSerrato/simple-react-project.git"
-  },
-  "author": "Matias Serrato",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MatiasHernanSerrato/simple-react-project/issues"
-  },
-  "homepage": "https://github.com/MatiasHernanSerrato/simple-react-project#readme"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }
