@@ -1,39 +1,36 @@
 import React, { Component } from 'react';
 
-const nombreCompleto = 'Jhon Papa';
-var objeto = {
-  nombreCompleto: 'Carl Tomato',
-  propiedad: {
-    nombreCompleto: 'Carlos Lechuga',
-    getNombreCompleto: function() {
-      return nombreCompleto;
-    }
-  }
-};
-
-let prueba = objeto.propiedad.getNombreCompleto;
-
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.getFirstConsoleLog = this.getFirstConsoleLog.bind(this);
-    this.getSecondConsoleLog = this.getSecondConsoleLog.bind(this);
+    this.nombreCompleto = 'John Papa';
+    this.objeto = {
+      nombreCompleto: 'Carl Tomato',
+      propiedad: {
+        nombreCompleto: 'Carlos Lechuga',
+        getNombreCompleto: () => {
+          return this.nombreCompleto;
+        }
+      }
+    };
   }
 
-  getFirstConsoleLog() {
-    return objeto.propiedad.getNombreCompleto();
+  getFirstConsoleLog = () => {
+    return this.objeto.propiedad.getNombreCompleto();
   }
 
-  getSecondConsoleLog() {
+  getSecondConsoleLog = () => {
+    const prueba = this.objeto.propiedad.getNombreCompleto;
     return prueba();
   }
 
   render() {
-    const { getFirstConsoleLog, getSecondConsoleLog } = this;
+    const firstMessage  = this.getFirstConsoleLog();
+    const secondMessage = this.getSecondConsoleLog();
     return (
       <div className="App">
-        <p>{getFirstConsoleLog()}</p>
-        <p>{getSecondConsoleLog()}</p>
+        <p>{firstMessage}</p>
+        <p>{secondMessage}</p>
       </div>
     );
   }
